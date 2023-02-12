@@ -208,10 +208,10 @@ be. Then, consider the implications of representing the overall data
 type as a tuple or a record.
 ......................................................................*)
 
-(* The `Unix` module provides for dates and times through a record type, 
-   `tm`. There are other plausible alternatives, such as a triple of 
-   type `int * int * int`, though the record type has a nice self-documenting 
-   aspect in the labels. *)
+(* The `Unix` module provides for dates and times through a record
+   type, `tm`. There are other plausible alternatives, such as a
+   triple of type `int * int * int`, though the record type has a nice
+   self-documenting aspect in the labels. *)
 
 type date = { year : int; month : int; day : int } ;;
 
@@ -249,8 +249,8 @@ You may find Wikipedia's leap year algorithm pseudocode useful:
 
 ........................................................................
 Exercise 8: Create a `validated_date` function that raises
-`Invalid_date` if the invariant is violated, and returns the date if
-valid.
+`Invalid_date` if the invariant is violated, and returns the date
+unchanged if valid.
 ......................................................................*)
 
 exception Invalid_date of string ;;
@@ -326,7 +326,7 @@ representing its date argument. For example,
         ^ string_of_int year ;;
 
    Alternatively, functions in the formatted printing module `Printf`
-   are useful to know abou for this kind of thing: *)
+   are useful to know about for this kind of thing: *)
   
 let string_of_date ({year; month; day} : date) : string =
   let month_names = ["January"; "February"; "March"; "April"; 
